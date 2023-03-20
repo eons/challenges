@@ -1,0 +1,30 @@
+[
+    {
+        "invalidUsername": "testName",
+        "invalidPassword": "testPassword",
+        "invalidMessage": "Epic sadface: Username and password do not match any user in this service"
+    },
+    
+    {
+        "lockedUsername": "locked_out_user",
+        "lockedPassword": "secret_sauce",
+        "lockedMessage": "Epic sadface: Sorry, this user has been locked out."
+    },
+
+    {
+        "validUsername": "standard_user",
+        "validPassword": "secret_sauce",
+        "dashboardMessage": "Products",
+        "productName": "Sauce Labs Fleece Jacket"
+    },
+
+    {
+        "firstName": "Amadeus",
+        "lastName": "Mozart",
+        "postalCode": "46001"
+    },
+
+    {
+        "completionLetter": "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
+    }
+]
