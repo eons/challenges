@@ -1,0 +1,29 @@
+[
+    {
+            "role": "Resource Manager", 
+            "menuItemsList":
+            [
+                "Resource Management",
+                "My Timesheets",
+                "My Tasks",
+                "Automation, ResourceManager",
+                "My Account",
+                "Notifications",
+                "Log Out"
+            ]
+    },
+
+    {
+        "role": "Other role", 
+        "menuItemsList":
+        [
+            "Item 1",
+            "Item 3",
+            "Item 4",
+            "Item 5",
+            "Item 6",
+            "Item 6",
+            "Item 7"
+        ]
+    }     
+]
