@@ -1,11 +1,10 @@
-const {test}= require('@playwright/test');
 const roles= require('../Utils/TestData/menuLettersTestData.json');
 
 class BasePage
 {
     constructor(_page)
     {
-        this.lettersContainer= _page.locator("ul.navbar-nav li:not([class='divider'])");
+        this.menuItemsContainer= _page.locator("ul.navbar-nav li:not([class='divider'])");
         this.pageTitleElement= _page.locator(".big-title");
         this.resourceManagementMenuItem= _page.locator("//a[contains(text(), 'Resource Management')]");
         this.MyTimesheetsMenuItem= _page.locator("//a[contains(text(), 'My Timesheets')]");
@@ -26,7 +25,7 @@ class BasePage
         const expectedMenuItems= roles[0].menuItemsList;
         let originalTitles;
         
-        originalTitles = await this.lettersContainer.allInnerTexts();
+        originalTitles = await this.menuItemsContainer.allInnerTexts();
 
         const currentMenuItems= originalTitles.map(element =>
          {
@@ -72,7 +71,7 @@ class BasePage
 
      async gotoLogOut()
      {   
-        try // first execution without teh exception 
+        try // first execution without the exception 
         {
          await this.automationResourceManagerMenuItem.click();
          await this.logOutMenuItem.click();

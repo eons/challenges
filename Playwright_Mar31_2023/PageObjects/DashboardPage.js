@@ -1,4 +1,3 @@
-const {test, expect}= require('@playwright/test');
 const {BasePage}= require('./BasePage');
 
 class DashboardPage extends BasePage

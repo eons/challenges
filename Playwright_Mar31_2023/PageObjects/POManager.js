@@ -10,13 +10,12 @@ class POManager
 {
     constructor(_page)
     {
-        this.page= _page;
-        this.loginPage= new LoginPage(this.page);
-        this.DashboardPage= new DashboardPage(this.page);
-        this.MyTimesheetsPage= new MyTimesheetsPage(this.page);
-        this.MyTasksPage= new MyTasksPage(this.page);
-        this.MyaccountPage= new MyAccountPage(this.page);
-        this.NotificationsPage= new NotificationsPage(this.page);
+        this.loginPage= new LoginPage(_page);
+        this.DashboardPage= new DashboardPage(_page);
+        this.MyTimesheetsPage= new MyTimesheetsPage(_page);
+        this.MyTasksPage= new MyTasksPage(_page);
+        this.MyaccountPage= new MyAccountPage(_page);
+        this.NotificationsPage= new NotificationsPage(_page);
     }
 
     getLoginPage()
