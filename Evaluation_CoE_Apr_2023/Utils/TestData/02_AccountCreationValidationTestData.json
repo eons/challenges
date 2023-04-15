@@ -1,0 +1,146 @@
+[
+    {
+        "scenario": "Male || +18 || Doctor",
+        "firstName": "Marco",
+        "lastName": "Chan",
+        "occupation": "Doctor",
+        "gender": "Male",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "true"
+    },
+    {
+        "scenario": "Male || +18 || Student",
+        "firstName": "Marco",
+        "lastName": "Chan",
+        "occupation": "Student",
+        "gender": "Male",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "true"
+    },
+    {
+        "scenario": "Male || +18 || Engineer",
+        "firstName": "Marco",
+        "lastName": "Chan",
+        "occupation": "Engineer",
+        "gender": "Male",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "true"
+    },
+    {
+        "scenario": "Male || +18 || Scientist",
+        "firstName": "Marco",
+        "lastName": "Chan",
+        "occupation": "Scientist",
+        "gender": "Male",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "true"
+    },
+    {
+        "scenario": "Male || -18 || Doctor",
+        "firstName": "Marco",
+        "lastName": "Chan",
+        "occupation": "Doctor",
+        "gender": "Male",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "false"
+    },
+    {
+        "scenario": "Male || -18 || Student",
+        "firstName": "Marco",
+        "lastName": "Chan",
+        "occupation": "Student",
+        "gender": "Male",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "false"
+    },
+    {
+        "scenario": "Male || -18 || Engineer",
+        "firstName": "Marco",
+        "lastName": "Chan",
+        "occupation": "Engineer",
+        "gender": "Male",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "false"
+    },
+    {
+        "scenario": "Male || -18 || Scientist",
+        "firstName": "Marco",
+        "lastName": "Chan",
+        "occupation": "Scientist",
+        "gender": "Male",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "false"
+    },
+    {
+        "scenario": "Female || +18 || Doctor",
+        "firstName": "Rossana",
+        "lastName": "May",
+        "occupation": "Doctor",
+        "gender": "Female",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "true"
+    },
+    {
+        "scenario": "Female || +18 || Student",
+        "firstName": "Rossana",
+        "lastName": "May",
+        "occupation": "Student",
+        "gender": "Female",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "true"
+    },
+    {
+        "scenario": "Female || +18 || Engineer",
+        "firstName": "Rossana",
+        "lastName": "May",
+        "occupation": "Engineer",
+        "gender": "Female",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "true"
+    },
+    {
+        "scenario": "Female || +18 || Scientist",
+        "firstName": "Rossana",
+        "lastName": "May",
+        "occupation": "Scientist",
+        "gender": "Female",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "true"
+    },
+    {
+        "scenario": "Female || -18 || Doctor",
+        "firstName": "Rossana",
+        "lastName": "May",
+        "occupation": "Doctor",
+        "gender": "Female",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "false"
+    },
+    {
+        "scenario": "Female || -18 || Student",
+        "firstName": "Rossana",
+        "lastName": "May",
+        "occupation": "Student",
+        "gender": "Female",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "false"
+    },
+    {
+        "scenario": "Female || -18 || Engineer",
+        "firstName": "Rossana",
+        "lastName": "May",
+        "occupation": "Engineer",
+        "gender": "Female",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "false"
+    },
+    {
+        "scenario": "Female || -18 || Scientist",
+        "firstName": "Rossana",
+        "lastName": "May",
+        "occupation": "Scientist",
+        "gender": "Female",
+        "password": "Aaaaaa1!",
+        "is18YearsOrOlder": "false"
+    }
+]
