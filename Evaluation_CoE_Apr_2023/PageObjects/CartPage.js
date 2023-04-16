@@ -15,13 +15,14 @@ class CartPage extends BasePage
 
     async verifyProductIsDisplayed(_productName)
     {
-        await this.listOfProducts.waitFor();
+        console.log(_productName);
+        await this.listOfProducts.last().waitFor();
         return await this.getProductLocator(_productName).isVisible();
     }
 
     getProductLocator(_productName)
     {
-        return this.page.locator("h3:has-text('"+_productName+"')");
+        return this.page.locator("//h3[contains(text(), '"+_productName+"')]");    
     }
 
     async clickCheckoutButton()

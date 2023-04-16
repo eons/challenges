@@ -40,13 +40,12 @@ class CheckoutPage extends BasePage
         await this.applyCouponTextbox.type(_applyCoupon);
         flag= await this.isAlertMessageVisible(true); expect(flag).toBeTruthy();
 
-        const country= await this.selctCoutry(_country);
+        await this.selectCoutry(_country);
         flag= await this.isAlertMessageVisible(false); expect(flag).toBeFalsy();
     }
 
     async isAlertMessageVisible(_expectedFlag)
     {
-        //await this.placeOrderButton.waitFor();
         await this.placeOrderButton.click();
         
 
@@ -70,7 +69,7 @@ class CheckoutPage extends BasePage
         }   
     }
 
-    async selctCoutry(_country)
+    async selectCoutry(_country)
     {
         await this.selectCountryDropdown.type(_country, {delay:250});
         const listOfCountries= this.countriesContainer;
@@ -86,6 +85,12 @@ class CheckoutPage extends BasePage
                     break;
                 }
              }
+    }
+
+    async checkoutHappyPath(_country)
+    {
+        await this.selectCoutry(_country);
+        await this.placeOrderButton.click();
     }
 }
 module.exports= {CheckoutPage};

@@ -10,14 +10,24 @@ class BasePage
         this.signoutMenuItem= _page.locator(".fa-sign-out");
     }
 
-    async getSignOut()
+    async gotoHomePage()
     {
-        await this.signoutMenuItem.click();
+        await this.homeMenuItem.click();
+    }
+    
+    async gotoOrdersPage()
+    {
+        await this.ordersMenuItem.click();
     }
 
     async gotoCartPage()
     {
         await this.cartMenuItem.click();
+    }
+
+    async getSignOut()
+    {
+        await this.signoutMenuItem.click();
     }
 }
 module.exports= {BasePage};

@@ -1,6 +1,6 @@
 const {test, expect}= require('@playwright/test');
 const {POManager}= require('../PageObjects/POManager');
-const loginData= JSON.parse(JSON.stringify(require('../Utils/TestData/02_AccountCreationValidationTestData.json')))
+const dataSet= JSON.parse(JSON.stringify(require('../Utils/TestData/03_&_04_TestData.json')))
 
 test("Validate Checkout completed and CSV contains correct purchase information", async ({page}) =>
 {
@@ -11,5 +11,20 @@ test("Validate Checkout completed and CSV contains correct purchase information"
     const checkoutPage= poManager.getCheckoutPage();
     const thanksPage= poManager.getThanksPage();
 
-    loginPage.getLogin()
+    await loginPage.goToPage();
+    await loginPage.getLogin(dataSet.userName, dataSet.password);
+    await dashboardPage.searchProductAddCart(dataSet.productName1);
+    await dashboardPage.searchProductAddCart(dataSet.productName2);
+    await dashboardPage.searchProductAddCart(dataSet.productName3);
+    await dashboardPage.gotoCartPage();
+    expect(await cartPage.verifyProductIsDisplayed(dataSet.productName1)).toBeTruthy;
+    expect(await cartPage.verifyProductIsDisplayed(dataSet.productName2)).toBeTruthy;
+    expect(await cartPage.verifyProductIsDisplayed(dataSet.productName3)).toBeTruthy;
+    await cartPage.clickCheckoutButton();
+    await checkoutPage.checkoutHappyPath(dataSet.country);
+    await thanksPage.getOrderIds();
+    await thanksPage.downloadCSVOrderDetails();
+    await thanksPage.gotoOrdersPage();
+
+    //await page.pause();
 });
