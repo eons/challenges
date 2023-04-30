@@ -3,6 +3,7 @@ const {LoginPage}= require('./LoginPage');
 const {CartPage}= require('../PageObjects/CartPage');
 const {CheckoutPage}= require('./CheckoutPage');
 const {ThanksPage}= require('./ThanksPage');
+const {OrdersPage}= require('./OrdersPage');
 
 class POManager
 {
@@ -13,6 +14,7 @@ class POManager
         this.cartPage= new CartPage(_page);
         this.checkoutPage= new CheckoutPage(_page);
         this.thanksPage= new ThanksPage(_page);
+        this.ordersPage= new OrdersPage(_page);
     }
 
     getLoginPage()
@@ -38,6 +40,11 @@ class POManager
     getThanksPage()
     {
         return this.thanksPage;
+    }
+
+    getOrdersPage()
+    {
+        return this.OrdersPage;
     }
 }
 module.exports= {POManager};

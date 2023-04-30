@@ -1,5 +1,9 @@
 const {expect}= require('@playwright/test');
 const { BasePage } = require('./BasePage');
+const { fs, existsSync, createReadStream }= require('node:fs');
+//const exp = require('node:constants');
+const { parse }= require('csv-parse');
+//const { error } = require('node:console');
 
 class ThanksPage extends BasePage
 {
@@ -16,24 +20,59 @@ class ThanksPage extends BasePage
     async getOrderIds()
     {
         await expect(this.thanksLetter).toHaveText(" Thankyou for the order. ");
-        //let listOfOrderIds= [];
-            //await this.orderIdContainer.textContent();
+        let listOfOrderIds= [];
+        let cleanOrderId;
+        let countOrderIds= await this.orderIdContainer.locator("label").count();
+        console.log("Number of orderIds: " + countOrderIds);
+        for(let i= 0; i<countOrderIds; ++i)
+        {
+            cleanOrderId= await this.orderIdContainer.locator("label").nth(i).textContent();
+    
+            cleanOrderId= await cleanOrderId.split('|');
+            cleanOrderId= cleanOrderId[1];
+            cleanOrderId= await cleanOrderId.trim();
+            listOfOrderIds.push(cleanOrderId);
+        }
+        //console.log("List: " + listOfOrderIds);
     }
 
     async downloadCSVOrderDetails()
     {
-        // Start waiting for download before clicking. Note no await.
         const downloadPromise = this.page.waitForEvent('download');
-        //await this.page.getByText('Download file').click();
         await this.csvOrderDetailsButton.click();
         const download = await downloadPromise;
         await download.suggestedFilename();
         await download.saveAs('C:/Users/josue/Downloads/EvaluationCSV/order-invoice_eons.csv');
-        // Wait for the download process to complete
-        console.log(await download.path());
-        // Save downloaded file somewhere
-        
-        
+        //console.log(await download.path());
+        expect(await this.isFileCorrectlyDownloaded()).toBeTruthy();
+    }
+
+    async isFileCorrectlyDownloaded()
+    {
+        console.log("I was here 1");
+        let path= 'C:/Users/josue/Downloads/EvaluationCSV/order-invoice_eons.csv';
+        if(existsSync(path) && path.length != 0)
+        {
+            return true;
+        }else{return false;}
+    }
+
+    async readCSVFileAndGetArrayWithinfo()
+    {
+        const results = [];
+
+        createReadStream('C:/Users/josue/Downloads/EvaluationCSV/order-invoice_eons.csv')
+        .pipe(parse({ delimiter: ",", from_line: 2 }))
+        .on("data", function (row) {
+        results.push(row);
+        })
+        .on("error", function (error) {
+        console.log(error.message);
+        })
+        .on("end", function () {
+        console.log(results);
+        });
+        console.log(results);
     }
 }
 module.exports= {ThanksPage};
